@@ -1,0 +1,22 @@
+.headerSection{
+	width: 90%;
+	background-color: #cecece;
+	padding: 0 5%;
+}
+.logoSection{
+	width: 20%;
+	display: inline-block;
+}
+.searchSection{
+	width: 50%;
+	display: inline-block;
+	text-align: center;
+}
+.searchSection form .example-full-width input{
+	width: 80%;
+}
+.menuSection{
+	width: 30%;
+	display: inline-block;
+	text-align: right;
+}

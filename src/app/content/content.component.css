@@ -1,0 +1,19 @@
+.mainContent{
+	width: 90%;
+	padding: 0 5%;
+}
+.leftContent{
+	width: 20%;
+	display: inline-block;
+}
+.rightContent{
+	width: 20%;
+	display: inline-block;
+}
+.middleContent{
+	width: 58%;
+	padding: 1%;
+	display: inline-block;
+	border-left: 1px solid #cecece;
+	border-right: 1px solid #cecece;
+}

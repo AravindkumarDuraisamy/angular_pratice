@@ -1,0 +1,30 @@
+<div class="headerSection" layout="row">
+	
+	<div class="logoSection" flex="">
+		<img src="">
+	</div>
+
+	<div class="searchSection" flex="">
+		<form class="example-form">
+			<mat-form-field class="example-full-width">
+				<input matInput placeholder="Search" value="">
+			</mat-form-field>
+		</form>
+	</div>
+
+	<div class="menuSection" flex="">
+		<button mat-button>Home</button>
+		<button mat-button>About Us</button>
+		<button mat-button>Contact</button>
+		<button mat-button [matMenuTriggerFor]="afterMenu">My Account</button>
+		<mat-menu #afterMenu="matMenu" xPosition="after">
+		  <button mat-menu-item>My Details</button>
+		  <button mat-menu-item>Reports</button>
+		  <button mat-menu-item>Leave Details</button>
+		  <button mat-menu-item>Fees Payment</button>
+		  <button mat-menu-item>My Activities</button>
+		</mat-menu>
+		<button mat-button>Log Out</button>
+	</div>
+
+</div>
