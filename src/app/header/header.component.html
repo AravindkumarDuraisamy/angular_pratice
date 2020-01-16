@@ -18,8 +18,8 @@
 		<button mat-button>Contact</button>
 		<button mat-button [matMenuTriggerFor]="afterMenu">My Account</button>
 		<mat-menu #afterMenu="matMenu" xPosition="after">
-		  <button mat-menu-item>My Details</button>
-		  <button mat-menu-item>Reports</button>
+		  <button mat-menu-item><a routerLink="/Detail">My Details</a></button>
+		  <button mat-menu-item><a routerLink="">Reports</a></button>
 		  <button mat-menu-item>Leave Details</button>
 		  <button mat-menu-item>Fees Payment</button>
 		  <button mat-menu-item>My Activities</button>

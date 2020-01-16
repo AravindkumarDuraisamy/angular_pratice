@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from '../services/content.service';
 
 @Component({
   selector: 'app-content',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+	
+	private _data:any;
+  constructor( private contentService: ContentService) {
 
-  constructor() { }
 
-  ngOnInit() {
   }
 
+	ngOnInit() {
+		this.contentService.getAllData().subscribe(response=>{ 
+			this._data = response.data;      
+		});
+	}
 }
