@@ -13,14 +13,14 @@
 	</div>
 
 	<div class="menuSection" flex="">
-		<button mat-button>Home</button>
+		<button mat-button><a routerLink="">Home</a></button>
 		<button mat-button>About Us</button>
 		<button mat-button>Contact</button>
 		<button mat-button [matMenuTriggerFor]="afterMenu">My Account</button>
 		<mat-menu #afterMenu="matMenu" xPosition="after">
 		  <button mat-menu-item><a routerLink="/Detail">My Details</a></button>
-		  <button mat-menu-item><a routerLink="">Reports</a></button>
-		  <button mat-menu-item>Leave Details</button>
+		  <button mat-menu-item><a routerLink="/Report">Reports</a></button>
+		  <button mat-menu-item><a routerLink="/Table">Employe Details</a></button>
 		  <button mat-menu-item>Fees Payment</button>
 		  <button mat-menu-item>My Activities</button>
 		</mat-menu>
