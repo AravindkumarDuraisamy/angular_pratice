@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewChild } from '@angular/core'
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { ContentService } from '../services/content.service';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-
 
 @Component({
   selector: 'app-table',
@@ -11,25 +9,19 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class TableComponent implements OnInit {
 
-	private _data:any;
+	MyDataSource: any;  
+	displayedColumns = ['id', 'employee_name', 'employee_salary', 'employee_age'];
+	@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;  
+	@ViewChild(MatSort, {static: true}) sort: MatSort; 
 
-	displayedColumns: string[] = ['id', 'employee_name', 'employee_salary', 'employee_age'];
-	dataSource = new MatTableDataSource(this._data);
-
-	@ViewChild(MatPaginator , {static: false}) paginator: MatPaginator;
-	@ViewChild(MatSort , {static: false}) sort: MatSort;
-
-	constructor( private contentService: ContentService) {
-	}
+	constructor( public contentService: ContentService) {}
 
 	ngOnInit() {
-		this.contentService.getAllData().subscribe(response=>{ 
-			this._data = response.data;      
+		this.contentService.getAllData().subscribe(response=>{
+			this.MyDataSource = new MatTableDataSource();  
+			this.MyDataSource.data = response.data;  
+			this.MyDataSource.sort = this.sort;  
+			this.MyDataSource.paginator = this.paginator;
 		});
-	}
-
-	ngAfterViewInit() {
-		this.dataSource.paginator = this.paginator;
-		this.dataSource.sort = this.sort;
 	}
 }

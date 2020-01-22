@@ -1,37 +1,39 @@
-<div *ngIf="_data?.length>0" class="data" >
- <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="_data">
+<mat-card>  
+    <div class="alert alert-info">  
+        <strong>Angular Material DataTable With Sorting</strong>  
+    </div>  
+    <div class="example-container mat-elevation-z8">  
+        <mat-table #Table [dataSource]="MyDataSource" matSort>  
   
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let obj"> {{ obj.id }} </td>
-      </ng-container>
+            <!-- For ID -->  
+            <ng-container matColumnDef="id">  
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>  
+                <mat-cell *matCellDef="let obj"> {{obj.id}} </mat-cell>  
+            </ng-container>  
   
-      <!-- Name Column -->
-      <ng-container matColumnDef="employee_name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let obj"> {{ obj.employee_name }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="employee_salary">
-        <th mat-header-cell *matHeaderCellDef> Salary </th>
-        <td mat-cell *matCellDef="let obj"> {{ obj.employee_salary }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="employee_age">
-        <th mat-header-cell *matHeaderCellDef> Age </th>
-        <td mat-cell *matCellDef="let obj"> {{ obj.employee_age }} </td>
-      </ng-container>
+            <!-- For Post ID -->  
+            <ng-container matColumnDef="employee_name">  
+                <mat-header-cell *matHeaderCellDef mat-sort-header> User ID </mat-header-cell>  
+                <mat-cell *matCellDef="let obj"> {{obj.employee_name}} </mat-cell>  
+            </ng-container>  
   
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+            <!-- For Name -->  
+            <ng-container matColumnDef="employee_salary">  
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>  
+                <mat-cell *matCellDef="let obj"> {{obj.employee_salary}} </mat-cell>  
+            </ng-container> 
+
+             <ng-container matColumnDef="employee_age">  
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>  
+                <mat-cell *matCellDef="let obj"> {{obj.employee_age}} </mat-cell>  
+            </ng-container>  
   
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-    
-  </div>
-
-
-
-</div>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>  
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
+        </mat-table>  
+  
+        <!-- To paginate between pages with search -->  
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">  
+        </mat-paginator>  
+    </div>  
+</mat-card>  

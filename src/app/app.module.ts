@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatNativeDateModule, MatDatepickerModule,MatMenuModule,MatFormFieldModule,MatInputModule } from "@angular/material";
+import {MatNativeDateModule, MatDatepickerModule,MatMenuModule,MatFormFieldModule } from "@angular/material";
 import {MatListModule} from '@angular/material/list';
 import { ChartsModule } from 'ng2-charts';
-
+import { MatCardModule } from '@angular/material';
 
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +16,8 @@ import { ContentService } from './services/content.service';
 import { DetailsComponent } from './details/details.component';
 import { ReportsComponent } from './reports/reports.component';
 import { TableComponent } from './table/table.component';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+         MatSortModule, MatTableModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -35,16 +34,18 @@ import {MatSort} from '@angular/material/sort';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatInputModule,
     MatNativeDateModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatListModule,
     HttpClientModule,
     ChartsModule,
-    MatTableDataSource,
-    MatPaginator,
-    MatSort
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [ContentService],
   bootstrap: [AppComponent]
